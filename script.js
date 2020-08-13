@@ -4,24 +4,55 @@ document.getElementById("prev").addEventListener("click", function () {
     if (index != 1) {
         index -= 1;
     } else {
-        index = 27;
+        index = 28;
     }
     document.getElementById("initial").src = "Cards/" + 4 * index + ".png";
     document.getElementById("idolized").src = "Cards/" + 4 * index + "_t.png";
     updateGroup();
     updateSub();
     updateName();
+    updateYear();
+    document.getElementById("cards").selectedIndex = index - 1;
 });
-function dropdown(a){
-    index=a+1;
+function dropdown(a) {
+    index = a + 1;
     document.getElementById("initial").src = "Cards/" + 4 * index + ".png";
     document.getElementById("idolized").src = "Cards/" + 4 * index + "_t.png";
     updateGroup();
     updateSub();
     updateName();
+    updateYear();
 };
-document.getElementById("next").addEventListener("click", function () {
-    if (index != 27) {
+document.onkeydown = checkKey;
+
+function checkKey(e) {
+
+    e = e || window.event;
+
+    if (e.keyCode == '38') {
+        // up arrow
+    }
+    else if (e.keyCode == '40') {
+        // down arrow
+    }
+    else if (e.keyCode == '37') {
+       // left arrow
+       if (index != 1) {
+        index -= 1;
+    } else {
+        index = 28;
+    }
+    document.getElementById("initial").src = "Cards/" + 4 * index + ".png";
+    document.getElementById("idolized").src = "Cards/" + 4 * index + "_t.png";
+    updateGroup();
+    updateSub();
+    updateName();
+    updateYear();
+    document.getElementById("cards").selectedIndex = index - 1;
+    }
+    else if (e.keyCode == '39') {
+       // right arrow
+       if (index != 28) {
         index += 1;
     } else {
         index = 1;
@@ -32,27 +63,51 @@ document.getElementById("next").addEventListener("click", function () {
     updateGroup();
     updateSub();
     updateName();
+    updateYear();
+    document.getElementById("cards").selectedIndex = index - 1;
+    }
+
+};
+document.getElementById("next").addEventListener("click", function () {
+    if (index != 28) {
+        index += 1;
+    } else {
+        index = 1;
+    }
+    document.getElementById("initial").src = "Cards/" + 4 * index + ".png";
+    document.getElementById("idolized").src = "Cards/" + 4 * index + "_t.png";
+
+    updateGroup();
+    updateSub();
+    updateName();
+    updateYear();
+    document.getElementById("cards").selectedIndex = index - 1;
 });
 function updateGroup() {
     console.log("index is" + index);
     console.log(index / 9);
-    if (index == 1) {
+    if (index >= 1 && index <= 9) {
         document.getElementById("group").src = "Groups/muse.png";
     }
-    if (index == 9) {
-        document.getElementById("group").src = "Groups/muse.png";
-    }
-    if (index == 10) {
+
+    if (index >= 10 && index <= 18) {
         document.getElementById("group").src = "Groups/aqours.png";
     }
-    if (index == 18) {
-        document.getElementById("group").src = "Groups/aqours.png";
-    }
-    if (index == 19) {
+
+    if (index >= 19 && index <= 28) {
         document.getElementById("group").src = "Groups/nijigaku.png";
     }
-    if (index == 27) {
-        document.getElementById("group").src = "Groups/nijigaku.png";
+
+}
+function updateYear(){
+    if(index==5||index==6||index==8||index==15||index==16||index==18||index==20||index==21||index==27||index==28){
+        document.getElementById("years").src = "Years/1.png";
+    }
+    if(index==1||index==3||index==4||index==10||index==11||index==14||index==19||index==23||index==25){
+        document.getElementById("years").src = "Years/2.png";
+    }
+    if(index==2||index==7||index==9||index==12||index==13||index==17||index==22||index==24||index==26){
+        document.getElementById("years").src = "Years/3.png";
     }
 }
 function updateSub() {
@@ -82,6 +137,9 @@ function updateSub() {
     }
     if (index == 22 || index == 23) {
         document.getElementById("subunit").src = "Subunits/diverdiva.png";
+    }
+    if (index == 28) {
+        document.getElementById("subunit").src = "";
     }
 
 }
@@ -216,75 +274,82 @@ function updateName() {
             document.getElementById("name").innerHTML = "Ruby Kurosawa";
             document.getElementById("icon").src = "Icons/ruby.png";
             break;
-            case 19:
+        case 19:
             for (var i = 0; i < all.length; i++) {
                 all[i].style.color = "#EE879D ";
             }
             document.getElementById("name").innerHTML = "Ayumu Uehara";
             document.getElementById("icon").src = "Icons/ayumu.png";
             break;
-            case 20:
+        case 20:
             for (var i = 0; i < all.length; i++) {
                 all[i].style.color = "#FFE41C ";
             }
             document.getElementById("name").innerHTML = "Kasumi Nakasu";
             document.getElementById("icon").src = "Icons/kasumi.png";
             break;
-            case 20:
+        case 20:
             for (var i = 0; i < all.length; i++) {
                 all[i].style.color = "#73C9F3 ";
             }
             document.getElementById("name").innerHTML = "Shizuku Osaka";
             document.getElementById("icon").src = "Icons/shizuku.png";
             break;
-            case 21:
+        case 21:
             for (var i = 0; i < all.length; i++) {
                 all[i].style.color = "#73C9F3 ";
             }
             document.getElementById("name").innerHTML = "Shizuku Osaka";
             document.getElementById("icon").src = "Icons/shizuku.png";
             break;
-            case 22:
+        case 22:
             for (var i = 0; i < all.length; i++) {
                 all[i].style.color = "#565EA9 ";
             }
             document.getElementById("name").innerHTML = "Karin Asaka";
             document.getElementById("icon").src = "Icons/karin.png";
             break;
-            case 23:
+        case 23:
             for (var i = 0; i < all.length; i++) {
                 all[i].style.color = "#F18F3D ";
             }
             document.getElementById("name").innerHTML = "Ai Miyashita";
             document.getElementById("icon").src = "Icons/ruby.png";
             break;
-            case 24:
+        case 24:
             for (var i = 0; i < all.length; i++) {
                 all[i].style.color = "#B44E8F ";
             }
             document.getElementById("name").innerHTML = "Kanata Konoe";
             document.getElementById("icon").src = "Icons/kanata.png";
             break;
-            case 25:
+        case 25:
             for (var i = 0; i < all.length; i++) {
                 all[i].style.color = "#E94C53 ";
             }
             document.getElementById("name").innerHTML = "Setsuna Yuki";
             document.getElementById("icon").src = "Icons/setsuna.png";
             break;
-            case 26:
+        case 26:
             for (var i = 0; i < all.length; i++) {
                 all[i].style.color = "#8EC225 ";
             }
             document.getElementById("name").innerHTML = "Emma Verde";
             document.getElementById("icon").src = "Icons/emma.png";
             break;
-            case 27:
+        case 27:
             for (var i = 0; i < all.length; i++) {
                 all[i].style.color = "#9AA3AA ";
             }
             document.getElementById("name").innerHTML = "Rina Tennoji";
             document.getElementById("icon").src = "Icons/rina.png";
+            break;
+        case 28:
+            for (var i = 0; i < all.length; i++) {
+                all[i].style.color = "#24BD8B ";
+            }
+            document.getElementById("name").innerHTML = "Shioriko Mifune";
+            document.getElementById("icon").src = "Icons/shioriko.png";
             break;
 
     }

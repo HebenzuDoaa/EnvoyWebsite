@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Home Page</title>
+        <link rel="stylesheet" href="./style.css" />
+        <style>
+            
+        </style>
+      </head>
+      <body>
+        <h2 class="logo">Love Live! School Idol Festival All Stars! Card Gallery!</h2>
+    
+          
+          
+          <div class="pics">
+              <table style="width:100%">
+                <tr>
+                    <tr>
+                        <td  style="width:33%"><h1 class="head">Initial</h1></td>
+                        <td  style="width:33%"><h1 class="head" id="name">Honoka Kousaka</h1></td>
+                        <td style="width:33%"><h1 class="head">Idolized</h1></td>
+                    </tr>
+                </tr>
+            </table>
+              <table>
+                  
+                  <tr>
+                      <td style="height: max-content;">   <img id="initial" style="width:100%" src="Cards/4.png"></td>
+                      <td style="height: max-content;"><img id="idolized" style="width:100%"src="Cards/4_t.png"></td>
+                  </tr>
+           
+              
+            </table>
+                  <table style="width:100%"><tr>
+                      <td style="width:33%">
+                        <img id="group" src="Groups/muse.png">
+                      </td>
+                      <td style="width:33%">
+                        <img id="subunit" src="Subunits/printemps.png">
+                      </td>
+                      <td style="width:33%">
+                        <img id="icon" src="Icons/honoka.png">
+                       
+                      </td>
+                  </tr></table>
+                  
+                   
+          </div>
+          <div class="pics">
+          <button id="prev">
+              &lt--
+          </button>
+          <label for="cards">Choose a card:</label>
+
+          <select name="cards" id="cards" onchange="dropdown(this.selectedIndex)">
+            <option value="1">Haikara Romance - Honoka</option>
+            <option value="1">Eternal Promise - Eli</option>
+            <option value="1">Lovely Police - Kotori</option>
+            <option value="1">Summer Festival Symphony - Umi</option>
+            <option value="1">Moonlight Dancer - Rin</option>
+            <option value="1">Scarlet Royal - Maki</option>
+            <option value="1">Sweet Night Parade - Nozomi</option>
+            <option value="1">Cherry Flutter - Hanayo</option>
+            <option value="1">My Sweet Devil - Nico</option>
+            <option value="1">Summer Adventure - Chika</option>
+            <option value="1">Royal Angel - Riko</option>
+            <option value="1">Priestess of the Sea God - Kanan</option>
+            <option value="1">Priestess Dance Step - Dia</option>
+            <option value="1">Rabbit in Wonderland - You</option>
+            <option value="1">Haunted Princess - Yoshiko</option>
+            <option value="1">Dreaming Sheep - Hanamaru</option>
+            <option value="1">Bitter & Sweet - Mari</option>
+            <option value="1">Fantastic Pierrot - Ruby</option>
+            <option value="1">Sweets Deco - Ayumu</option>
+            <option value="1">Flower Symphony - Kasumi</option>
+            <option value="1">Miracle Voyage - Shizuku</option>
+            <option value="1">Bleu Tentation - Karin</option>
+            <option value="1">Princess of Ryuuguujou - Ai</option>
+            <option value="1">Angel's Lullaby - Kanata</option>
+            <option value="1">Scarlet Courage - Setsuna</option>
+            <option value="1">Delightful Waltz - Emma</option>
+            <option value="1">Feeling Signal - Rina</option>
+          </select>
+          <button id="next">
+            --&gt
+        </button>
+    </div>
+        <script src="./script.js"></script>
+      </body>
+</html>

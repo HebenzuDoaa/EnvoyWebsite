@@ -2,14 +2,14 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Home Page</title>
+        <title>UR Card Gallery</title>
         <link rel="stylesheet" href="./style.css" />
         <style>
             
         </style>
       </head>
       <body>
-        <h2 class="logo">Love Live! School Idol Festival All Stars! Card Gallery!</h2>
+        <a href="https://kachagain.com/sifas/cards.php"><h2 class="logo">Love Live! School Idol Festival All Stars! Card Gallery!</h2></a>
     
           
           
@@ -18,7 +18,7 @@
                 <tr>
                     <tr>
                         <td  style="width:33%"><h1 class="head">Initial</h1></td>
-                        <td  style="width:33%"><h1 class="head" id="name">Honoka Kousaka</h1></td>
+                        <td  style="width:33%"><h1 class="head" id="name" onmouseout="update()" onmouseenter="secretName();">Honoka Kosaka</h1></td>
                         <td style="width:33%"><h1 class="head">Idolized</h1></td>
                     </tr>
                 </tr>
@@ -26,37 +26,38 @@
               <table>
                   
                   <tr>
-                      <td style="height: max-content;">   <img id="initial" style="width:100%" src="Cards/4.png"></td>
+                      <td style="height: max-content;">   <img  id="initial" style="width:100%" src="Cards/4.png"></td>
                       <td style="height: max-content;"><img id="idolized" style="width:100%"src="Cards/4_t.png"></td>
                   </tr>
            
               
             </table>
                   <table style="width:100%"><tr>
-                      <td style="width:25%">
-                        <img id="group" src="Groups/muse.png">
+                      <td  style="width:25%">
+                        <a id="glink" href="https://love-live.fandom.com/wiki/Muse"><img id="group" src="Groups/muse.png"></a>
                       </td>
-                      <td style="width:25%">
+                      <td class="mdata" id="y" style="width:25%">
                         <img id="years" src="Years/2.png">
                       </td>
-                      <td style="width:25%">
-                        <img id="subunit" src="Subunits/printemps.png">
+                      <td  style="width:25%">
+                        <a id="slink" href="https://love-live.fandom.com/wiki/Printemps"><img id="subunit" src="Subunits/printemps.png"></a>
                       </td>
-                      <td style="width:25%">
-                        <img id="icon" src="Icons/honoka.png">
+                      <td class="mdata" id="i" style="width:25%">
+                        <a id="link" href="https://love-live.fandom.com/wiki/Honoka_Kosaka"><img id="icon" src="Icons/honoka.png"></a>
                        
                       </td>
                   </tr></table>
                   
                    
           </div>
-          <div class="pics">
-          <button id="prev">
-              &lt--
-          </button>
-          <label for="cards">Choose a card:</label>
+          <div class="pics" style="height:50px">
+          <div class="button" id="prev">
+              <h3 class="unselectable">Previous</h3>
+          </div>
+         <div class="temp">
+          <label for="cards" style="font-family:logo">Select the Card:</label>
 
-          <select name="cards" id="cards" onchange="dropdown(this.selectedIndex)">
+          <select name="cards" style="display:inline-block" id="cards" onchange="dropdown(this.selectedIndex)">
             <option value="1">Haikara Romance - Honoka</option>
             <option value="2">Eternal Promise - Eli</option>
             <option value="3">Lovely Police - Kotori</option>
@@ -86,9 +87,10 @@
             <option value="1">Feeling Signal - Rina</option>
             <option value="1">Ketsui no Hikari - Shioriko</option>
           </select>
-          <button id="next">
-            --&gt
-        </button>
+        </div>
+        <div class="button" id="next">
+            <h3 class="unselectable">Next</h3>
+        </div>
     </div>
         <script src="./script.js"></script>
       </body>

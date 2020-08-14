@@ -3,6 +3,7 @@
 body{
     background-image: url('background.jpg');
     text-align: center;
+    background-size: cover;
 }
 
 @font-face {
@@ -13,6 +14,34 @@ body{
 td{
     border-collapse: collapse;
    
+}
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.button{
+    background-color: #E4007F;
+    transition-duration: 0.4s;
+    padding: 10px;
+    margin:auto;
+    overflow: hidden; /* if you don't want #second to wrap below #first */
+    display: inline-block;
+    border-radius: 25px;
+    width:100px;
+
+}
+.temp{
+    overflow: hidden; /* if you don't want #second to wrap below #first */
+    display: inline-block;
+    padding:10px;
+}
+.button:hover{
+    background-color: #009FE8;
 }
 
 .logo{
@@ -25,6 +54,13 @@ h1{
 }
 h2{
     font-size: 32px;
+    -webkit-text-stroke: 1px black;
+    color: #E4007F;
+}
+h3{
+   font-family: "logo";
+   margin: 0px;
+    
 }
 .head{
     -webkit-text-stroke: 1px black;
